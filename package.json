@@ -36,5 +36,6 @@
   },
   "peerDependencies": {
     "chart.js": "^2.4.0"
-  }
+  },
+  "dependencies": {}
 }
