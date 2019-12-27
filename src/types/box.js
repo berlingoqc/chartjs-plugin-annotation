@@ -123,8 +123,6 @@ module.exports = function(Chart) {
 			var view = this._view;
 			var ctx = this.chartInstance.chart.ctx;
 
-			console.log('box');
-
 			ctx.save();
 
 			// Canvas setup
