@@ -1055,19 +1055,14 @@ module.exports = function (Chart) {
 		},
 		inRange: function (mouseX, mouseY) {
 			var model = this._model;
-			console.log('is me ', pointInTriangle({x: mouseX, y: mouseY}, model.points[0], model.points[1], model.points[2]));
 			return model && pointInTriangle({x: mouseX, y: mouseY}, model.points[0], model.points[1], model.points[2]);
 		},
 		getCenterPoint: function () {
 			var model = this._model;
-			var p =  {
+			return {
 				x: (model.points[0].x + model.points[1].x + model.points[2].x) / 3,
 				y: (model.points[0].y + model.points[1].y + model.points[2].y) / 3
 			};
-
-			console.log('Center point', p);
-
-			return p;
 		},
 		getWidth: function () {
 			var model = this._model;
