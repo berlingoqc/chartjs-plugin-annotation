@@ -1004,6 +1004,7 @@ module.exports = function(Chart) {
 			var max = 0;
 
 			if (xScale) {
+				// change le mix max pour le point d'extremiter triangel
 				min = helpers.isValid(options.xMin) ? options.xMin : xScale.getValueForPixel(chartArea.left);
 				max = helpers.isValid(options.xMax) ? options.xMax : xScale.getValueForPixel(chartArea.right);
 
@@ -1028,6 +1029,7 @@ module.exports = function(Chart) {
 			var options = this.options;
 			var chartInstance = this.chartInstance;
 
+			console.log(JSON.stringify(model));
 			var xScale = chartInstance.scales[options.xScaleID];
 			var yScale = chartInstance.scales[options.yScaleID];
 			var chartArea = chartInstance.chartArea;
@@ -1102,12 +1104,20 @@ module.exports = function(Chart) {
 			var view = this._view;
 			var ctx = this.chartInstance.chart.ctx;
 
-			console.log('grogrogro');
-
 			ctx.save();
 
 			// Canvas setup
 			ctx.beginPath();
+			ctx.lineWidth = view.borderWidth;
+			ctx.strokeStyle = view.borderColor;
+			ctx.fillStyle = view.backgroundColor;
+
+
+			ctx.moveTo(view.clip.x1,view.clip.y1);
+			ctx.lineTo(view.clip.x2, view.clip.y2);
+			ctx.fill();
+
+			/*
 			ctx.rect(view.clip.x1, view.clip.y1, view.clip.x2 - view.clip.x1, view.clip.y2 - view.clip.y1);
 			ctx.clip();
 
@@ -1121,6 +1131,7 @@ module.exports = function(Chart) {
 			ctx.fillRect(view.left, view.top, width, height);
 			ctx.strokeRect(view.left, view.top, width, height);
 
+			*/
 			ctx.restore();
 		}
 	});
