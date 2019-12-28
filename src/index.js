@@ -40,7 +40,7 @@ Chart.Annotation.Element = require('./element.js')(Chart);
 Chart.Annotation.types = {
 	line: require('./types/line.js')(Chart),
 	box: require('./types/box.js')(Chart),
-	shape: require('./types/shape.js')(Chart)
+	triangle: require('./types/triangle.js')(Chart)
 };
 /* eslint-enable global-require */
 

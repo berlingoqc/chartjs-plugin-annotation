@@ -1,7 +1,7 @@
 /*@preserve!
  * chartjs-plugin-annotation.js
  * http://chartjs.org/
- * Version: 0.5.7
+ * Version: 0.5.8
  *
  * Copyright 2016 Evert Timberg
  * Released under the MIT license
@@ -514,7 +514,7 @@ Chart.Annotation.Element = require('./element.js')(Chart);
 Chart.Annotation.types = {
 	line: require('./types/line.js')(Chart),
 	box: require('./types/box.js')(Chart),
-	shape: require('./types/shape.js')(Chart)
+	triangle: require('./types/triangle.js')(Chart)
 };
 /* eslint-enable global-require */
 
@@ -523,7 +523,7 @@ var annotationPlugin = require('./annotation.js')(Chart);
 module.exports = annotationPlugin;
 Chart.pluginService.register(annotationPlugin);
 
-},{"./annotation.js":2,"./element.js":3,"./types/box.js":7,"./types/line.js":8,"./types/shape.js":9,"chart.js":1}],7:[function(require,module,exports){
+},{"./annotation.js":2,"./element.js":3,"./types/box.js":7,"./types/line.js":8,"./types/triangle.js":9,"chart.js":1}],7:[function(require,module,exports){
 // Box Annotation implementation
 module.exports = function(Chart) {
 	/* eslint-disable global-require */
